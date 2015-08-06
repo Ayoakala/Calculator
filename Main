@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+int main(void)
+
+{
+    while(1==1)
+    {
+    printf("Calculator\n");
+    long long x = GetLongLong();
+    string a = GetString();
+    if (strcmp(a, "*") == 0)
+    {
+        long long y = GetLongLong();
+        long long s = x*y;
+        printf("%lli * %lli = %lli\n", x, y, s);
+    }
+    if (strcmp(a, "x") == 0)
+     {
+        long long y = GetLongLong();
+        long long s = x*y;
+        printf("%lli x %lli = %lli\n", x, y, s);
+    }
+    
+    else if (strcmp(a, "-") == 0)
+    {
+        long long y = GetLongLong();
+        long long s = x-y;
+        printf("%lli - %lli = %lli\n", x, y, s);
+    }
+    
+    else if (strcmp(a, "+") == 0)
+    {
+        long long y = GetLongLong();
+        long long s = x+y;
+         printf("%lli + %lli = %lli\n", x, y, s);
+    }
+    
+    else if (strcmp(a, "/") == 0)
+    {
+        long long y = GetLongLong();
+        long long s = x/y;
+        printf("%lli / %lli = %lli\n", x, y, s);
+    }
+    
+    else if (strcmp(a,"^") == 0)
+    {
+        int y = GetInt();
+        long long s = x;
+        
+        if (y == 0)
+        {
+            s = 1;
+            }
+        else if (y == 1)
+        {
+            s = x;
+        }
+        
+        for (int z = 2; z <= y; z++)
+        {
+            s = s * x;
+        }
+        printf("%lli ^ %i = %lli\n", x , y , s);
+    }
+    }
+}
